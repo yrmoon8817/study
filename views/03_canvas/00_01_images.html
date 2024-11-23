@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="ko"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="format-detection" content="telephone=no">
+	
+	<title>캔버스의 기초</title>
+	<!-- Icon & Favicon -->
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+	<!-- // Icon & Favicon -->
+	<link rel="stylesheet" href="../css/libs.css">
+	<link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body data-pagestatus="new : 2024.10.21">
+	<div class="wrap">
+		<!--S: HEADER -->
+		<header>
+			<!-- Navigation -->
+			<nav></nav>
+			<!-- // Navigation -->
+		</header>
+		<!--E: HEADER -->
+		<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		canvas {
+			background-color: #f5f5f5;
+		}
+
+		</style>
+		<canvas></canvas>
+		<script>
+		const canvas = document.querySelector('canvas');
+		const context = canvas.getContext('2d');
+		canvas.width = 600;
+		canvas.height = 500;
+		const imgEl = new Image();
+		imgEl.src = '../../img/canvas/pawprint.png';
+		// 이미지가 다운되면 그리기
+		imgEl.addEventListener('load', function () {
+		  // drawImage(image, dx, dy, dWidth, dHeight);
+		  // (이미지 src, 캔버스 x좌표, 캔버스 y 좌표, 그려질 이미지 너비사이즈, 그려질 이미지 높이사이즈)
+		  context.drawImage(imgEl, 50, 50, 300, 300);
+		  // drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+		  // s= src를 의미 sx= 이미지의 x좌표, sy = 이미지의 y좌표, 
+		  //sWidth = 이미지 x좌표부터 가져올 너비사이즈, sHeight = 이미지 y좌표부터 가져올 높이사이즈
+		  // context.drawImage(imgEl, 30, 30, 200, 200, 0, 0, 300, 300);
+		});
+
+		</script>
+		<!--S: FOOTER -->
+		<footer class="footer">
+			<p class="footer-desc">©2024. YOORA All Rights Reserved.</p>
+		</footer>
+		<!--E: FOOTER -->
+	</div>
+
+
+
+</body></html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Yoora&#39;s Works</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+*{margin:0;padding:0;font-family: "Noto Sans KR", sans-serif;}
+html{width:100%;}
+body{width:100%;min-height:100%;background-color:#f1f1f1;padding-bottom:80px;}
+ul,ol{list-style:none}
+a {text-decoration:none;color:inherit;}
+.index-header{position:fixed;top:0;left:0;display:flex;justify-content:space-between;align-items:center;width:100%;min-height:80px;padding:0 20px;background:#17305e;z-index:2;box-sizing: border-box;}
+.index-header .index-title{padding:8px;font-size:25px;font-weight:700;color:#f1f1f1;box-sizing: border-box;}
+input,button, select{outline:none;border:0;}
+.index-header .index-search {max-width:400px;width:100%;display:flex;flex-wrap:wrap;justify-content:center;font-size:12px;}
+.index-search label{vertical-align:middle;margin-right:10px;font-weight:300;color:#fcc4b3}
+.index-search input,.index-search select{font-size:12px;vertical-align:middle;padding:3px 5px;color:#333}
+.index-search .index-search-date{display: flex;margin-left:0;}
+.index-search > li {display: flex;padding:5px 10px;border-bottom:1px solid #ddd;}
+.index-search .index-search-keyword input{width:170px}
+.index-section-category {padding:100px 20px 20px;background:#f1f1f1}
+.index-category-list {overflow-y:auto; max-height:100px;}
+.index-section-category a{color:#555;font-size:12px;}
+.sub-title{padding:10px;font-size:17px;font-weight:700;border-bottom:1px solid #999;scroll-margin-top:50px; color:#222;scroll-margin-top:100px;}
+.index-section-category .sub-title.cate {font-size:14px; border-bottom:1px solid #17305e;padding:5px 10px;box-sizing: border-box;}
+section .index-cate-item{padding:4px 10px;border-bottom:1px solid #ddd;box-sizing: border-box;}
+section .index-title{padding:8px;font-size:22px;font-weight:700;color:#2d2d2d;border-bottom:2px solid #2d2d2d;}
+section .sub-title:not(:first-of-type){margin-top:10px;}
+.section-list {padding:20px;}
+.sub-title:not(.cate):not(:first-of-type){margin-top:15px;}
+.index-section-item{display:block;padding:7px 10px;border-bottom:1px solid #ddd;}
+.index-link-title {display:inline-block;margin-right:15px;}
+.index-section-item .filename{background-color:#cccccc;padding:1px 5px;border-radius:4px;word-wrap:break-word}
+.section-list .index-link{font-size:13px;color:#777;text-decoration:none;letter-spacing:.6px;padding:1px 5px;border-radius:3px}
+.section-list .index-link:hover{color:#333}
+.index-section-info{padding:15px 20px;font-size:12px;color:#666}
+.index-section-info span{vertical-align:top;margin-top:2px;}
+.new{display:inline-block;position:relative;top:-1px;height:16px;padding:0 5px 1px;border-radius:3px;background:#b93636;font-family:verdana;font-size:11px;font-weight:400;color:#fff;line-height:16px;vertical-align:middle;}
+.update{display:inline-block;position:relative;top:-1px;height:16px;background:#2f79bb;color:#fff;padding:0 5px 1px;border-radius:3px;font-family:verdana;font-size:11px;font-weight:400;line-height:16px;vertical-align:middle;}
+.matching_keywords{background:#2aff9c;color:#16752e}
+.index-footer{position:fixed;bottom:0;left:0;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;padding:10px 20px;background:#17305e;min-height:40px;max-height:60px;}
+.index-footer .index-info{font-size:12px;color:#fff;letter-spacing:2px}
+@media screen and (max-width:767px){
+ .index-header {flex-direction: column;flex-wrap: wrap;text-align:center;padding:10px;box-sizing: border-box;}
+ .index-section-category{margin-top:130px;}
+ .index-search{max-width:360px !important;}
+ .index-search > li {padding:5px 10px;border-bottom:none;}
+ section {padding-left:10px !important;padding-right:10px !important;}
+ .section-list .index-link{display:inline-block;}
+ .section-list .index-link .filename{display:inline-block;margin-top:10px;}
+ .new, .update {margin-left:5px !important;}
+}
+</style>
+</head>
+<body>
+	<header class="index-header">
+		<h1 class="index-title">Yoora&#39;s Works</h1>
+		<ul class="index-search">
+			<li class="index-search-menu">
+				<label for="index-search-from-menu">Menu</label>
+				<select name="" id="index-search-from-menu">
+				</select>
+			</li>
+			<li class="index-search-date">
+				<label for="index-search-from-date">Updated date</label>
+				<select name="" id="index-search-from-date">
+				</select>
+			</li>
+			<li class="index-search-keyword">
+				<label for="index-search-by-keyword">Searching by keywords</label><input type="text" id="index-search-by-keyword" placeholder="Keywords">
+			</li>
+		</ul>
+	</header>
+	<section class="index-section-category" id="cate-top">
+		<h2 class="index-title">카테고리 바로가기</h2>
+		<h3 class="sub-title cate">01_UI-Component</h3>
+		<ul class="index-category-list">
+				<li class="index-cate-item"><a href="#tab0-1">INPUTS</a></li>
+				<li class="index-cate-item"><a href="#tab0-13">DATA DISPLAY</a></li>
+				<li class="index-cate-item"><a href="#tab0-22">FEEDBACK</a></li>
+				<li class="index-cate-item"><a href="#tab0-28">SURFACE</a></li>
+				<li class="index-cate-item"><a href="#tab0-32">NAVIGATION</a></li>
+				<li class="index-cate-item"><a href="#tab0-42">LAYOUT</a></li>
+				<li class="index-cate-item"><a href="#tab0-49">UTIL</a></li>
+		</ul>	
+		<h3 class="sub-title cate">02_interaction</h3>
+		<ul class="index-category-list">
+				<li class="index-cate-item"><a href="#tab1-1">PARALLAX</a></li>
+				<li class="index-cate-item"><a href="#tab1-3">SVG</a></li>
+				<li class="index-cate-item"><a href="#tab1-4">SCROLL</a></li>
+				<li class="index-cate-item"><a href="#tab1-5">COUNTER</a></li>
+				<li class="index-cate-item"><a href="#tab1-6">MULTILINGUAL</a></li>
+				<li class="index-cate-item"><a href="#tab1-7">YOUTUBE</a></li>
+				<li class="index-cate-item"><a href="#tab1-8">TYPO</a></li>
+				<li class="index-cate-item"><a href="#tab1-9">SWIPER</a></li>
+				<li class="index-cate-item"><a href="#tab1-11">ETC</a></li>
+		</ul>	
+		<h3 class="sub-title cate">03_canvas</h3>
+		<ul class="index-category-list">
+				<li class="index-cate-item"><a href="#tab2-1">캔버스의 기초</a></li>
+				<li class="index-cate-item"><a href="#tab2-12">캔버스의 활용</a></li>
+		</ul>	
+	</section>
+	<section class="index-section-info">
+		<span class="label-date new"></span> NEW <span class="label-date update"></span> UPDATE
+	</section>
+		<section class="section-list">
+				<h2 id="tab_doc" class="index-title">01_UI-Component</h2>
+				 <h3 id="tab0-1" class="sec_h sub-title">INPUTS</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/00_00_autocomplete.html"><span class="index-link-title">Accordion</span><span class="filename">views/01_UI-Component/00_00_autocomplete.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/00_01_button.html"><span class="index-link-title">Button</span><span class="filename">views/01_UI-Component/00_01_button.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/00_02_button_group.html"><span class="index-link-title">Button Group</span><span class="filename">views/01_UI-Component/00_02_button_group.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/00_03_checkbox.html"><span class="index-link-title">Checkbox</span><span class="filename">views/01_UI-Component/00_03_checkbox.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/00_04_radio_group.html"><span class="index-link-title">Radio Group</span><span class="filename">views/01_UI-Component/00_04_radio_group.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/00_05_rating.html"><span class="index-link-title">Rating</span><span class="filename">views/01_UI-Component/00_05_rating.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/00_06_select.html"><span class="index-link-title">Select</span><span class="filename">views/01_UI-Component/00_06_select.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/00_07_slider.html"><span class="index-link-title">Slider</span><span class="filename">views/01_UI-Component/00_07_slider.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/00_08_switch.html"><span class="index-link-title">Switch</span><span class="filename">views/01_UI-Component/00_08_switch.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/00_09_text_field.html"><span class="index-link-title">Text Field</span><span class="filename">views/01_UI-Component/00_09_text_field.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/00_10_transfer_list.html"><span class="index-link-title">Transfer List</span><span class="filename">views/01_UI-Component/00_10_transfer_list.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/00_11_toggle_button.html"><span class="index-link-title">Toggle Button</span><span class="filename">views/01_UI-Component/00_11_toggle_button.html</span></a></li></ul>				 <h3 id="tab0-13" class="sec_h sub-title">DATA DISPLAY</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/01_00_avatar.html"><span class="index-link-title">Avatar</span><span class="filename">views/01_UI-Component/01_00_avatar.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/01_01_badge.html"><span class="index-link-title">Badge</span><span class="filename">views/01_UI-Component/01_01_badge.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/01_02_chip.html"><span class="index-link-title">Chip</span><span class="filename">views/01_UI-Component/01_02_chip.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/01_03_divider.html"><span class="index-link-title">Divider</span><span class="filename">views/01_UI-Component/01_03_divider.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/01_04_icons.html"><span class="index-link-title">Icons</span><span class="filename">views/01_UI-Component/01_04_icons.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/01_05_list.html"><span class="index-link-title">List</span><span class="filename">views/01_UI-Component/01_05_list.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/01_06_table.html"><span class="index-link-title">Table</span><span class="filename">views/01_UI-Component/01_06_table.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/01_07_tooltip.html"><span class="index-link-title">Tooltip</span><span class="filename">views/01_UI-Component/01_07_tooltip.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/01_08_typography.html"><span class="index-link-title">Typography</span><span class="filename">views/01_UI-Component/01_08_typography.html</span></a></li></ul>				 <h3 id="tab0-22" class="sec_h sub-title">FEEDBACK</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/02_00_alert.html"><span class="index-link-title">Alert</span><span class="filename">views/01_UI-Component/02_00_alert.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/02_01_backdrop.html"><span class="index-link-title">Backdrop</span><span class="filename">views/01_UI-Component/02_01_backdrop.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/02_02_dialog.html"><span class="index-link-title">Dialog</span><span class="filename">views/01_UI-Component/02_02_dialog.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/02_03_progress.html"><span class="index-link-title">Progress</span><span class="filename">views/01_UI-Component/02_03_progress.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/02_04_skeleton.html"><span class="index-link-title">Skeleton</span><span class="filename">views/01_UI-Component/02_04_skeleton.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/02_05_snackbar.html"><span class="index-link-title">Snackbar</span><span class="filename">views/01_UI-Component/02_05_snackbar.html</span></a></li></ul>				 <h3 id="tab0-28" class="sec_h sub-title">SURFACE</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/03_00_accordion.html"><span class="index-link-title">Accordion</span><span class="filename">views/01_UI-Component/03_00_accordion.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/03_01_app_bar.html"><span class="index-link-title">App Bar</span><span class="filename">views/01_UI-Component/03_01_app_bar.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/03_02_card.html"><span class="index-link-title">Card</span><span class="filename">views/01_UI-Component/03_02_card.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/03_03_paper.html"><span class="index-link-title">Paper</span><span class="filename">views/01_UI-Component/03_03_paper.html</span></a></li></ul>				 <h3 id="tab0-32" class="sec_h sub-title">NAVIGATION</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/04_00_breadcrumbs.html"><span class="index-link-title">Breadcrumbs</span><span class="filename">views/01_UI-Component/04_00_breadcrumbs.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/04_01_drawer.html"><span class="index-link-title">Drawer</span><span class="filename">views/01_UI-Component/04_01_drawer.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/04_02_link.html"><span class="index-link-title">Link</span><span class="filename">views/01_UI-Component/04_02_link.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/04_03_menu.html"><span class="index-link-title">Menu</span><span class="filename">views/01_UI-Component/04_03_menu.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/04_04_navigation.html"><span class="index-link-title">Navigation</span><span class="filename">views/01_UI-Component/04_04_navigation.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/04_05_navigator.html"><span class="index-link-title">Navigator</span><span class="filename">views/01_UI-Component/04_05_navigator.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/04_06_pagination.html"><span class="index-link-title">Pagination</span><span class="filename">views/01_UI-Component/04_06_pagination.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/04_07_speed_dial.html"><span class="index-link-title">Speed Dial</span><span class="filename">views/01_UI-Component/04_07_speed_dial.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/04_08_stepper.html"><span class="index-link-title">Stepper</span><span class="filename">views/01_UI-Component/04_08_stepper.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/04_09_tabs.html"><span class="index-link-title">Tabs</span><span class="filename">views/01_UI-Component/04_09_tabs.html</span></a></li></ul>				 <h3 id="tab0-42" class="sec_h sub-title">LAYOUT</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/05_00_box.html"><span class="index-link-title">Box</span><span class="filename">views/01_UI-Component/05_00_box.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/05_01_container.html"><span class="index-link-title">Container</span><span class="filename">views/01_UI-Component/05_01_container.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/05_03_grid.html"><span class="index-link-title">Grid</span><span class="filename">views/01_UI-Component/05_03_grid.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/05_04_stack.html"><span class="index-link-title">Stack</span><span class="filename">views/01_UI-Component/05_04_stack.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/05_05_image_list.html"><span class="index-link-title">Image List</span><span class="filename">views/01_UI-Component/05_05_image_list.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/05_06_hidden.html"><span class="index-link-title">Hidden</span><span class="filename">views/01_UI-Component/05_06_hidden.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/05_07_masonry.html"><span class="index-link-title">Masonry</span><span class="filename">views/01_UI-Component/05_07_masonry.html</span></a></li></ul>				 <h3 id="tab0-49" class="sec_h sub-title">UTIL</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/06_00_modal.html"><span class="index-link-title">Modal</span><span class="filename">views/01_UI-Component/06_00_modal.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/06_01_popper.html"><span class="index-link-title">Popper</span><span class="filename">views/01_UI-Component/06_01_popper.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/06_02_popover.html"><span class="index-link-title">Popover</span><span class="filename">views/01_UI-Component/06_02_popover.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/01_UI-Component/06_03_timeline.html"><span class="index-link-title">TimeLine</span><span class="filename">views/01_UI-Component/06_03_timeline.html</span></a></li>						</ul>
+		<a href="#cate-top" class="go-to-top" style="position:fixed;bottom:80px;right:30px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:17px;background-color:#2d5f8a;color:#fff;width:50px;height:50px;line-height:50px;">Top</a>
+	</section>
+		<section class="section-list">
+				<h2 id="tab_doc" class="index-title">02_interaction</h2>
+				 <h3 id="tab1-1" class="sec_h sub-title">PARALLAX</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/02_interaction/00_00_parallax.html"><span class="index-link-title">background (use Jarallax)</span><span class="filename">views/02_interaction/00_00_parallax.html</span></a>
+						<span class="label-date new">2024.08.13</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/02_interaction/00_01_parallax.html"><span class="index-link-title">Swiper (use Jarallax)</span><span class="filename">views/02_interaction/00_01_parallax.html</span></a>
+						<span class="label-date new">2024.08.13</span>
+</li></ul>				 <h3 id="tab1-3" class="sec_h sub-title">SVG</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/02_interaction/01_00_svg.html"><span class="index-link-title">SVG Animation - Basic</span><span class="filename">views/02_interaction/01_00_svg.html</span></a>
+						<span class="label-date new">2024.10.15</span>
+</li></ul>				 <h3 id="tab1-4" class="sec_h sub-title">SCROLL</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/02_interaction/02_00_scroll.html"><span class="index-link-title">listTitle</span><span class="filename">views/02_interaction/02_00_scroll.html</span></a></li></ul>				 <h3 id="tab1-5" class="sec_h sub-title">COUNTER</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/02_interaction/03_00_counter.html"><span class="index-link-title">listTitle</span><span class="filename">views/02_interaction/03_00_counter.html</span></a></li></ul>				 <h3 id="tab1-6" class="sec_h sub-title">MULTILINGUAL</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/02_interaction/04_00_multilingual.html"><span class="index-link-title">listTitle</span><span class="filename">views/02_interaction/04_00_multilingual.html</span></a></li></ul>				 <h3 id="tab1-7" class="sec_h sub-title">YOUTUBE</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/02_interaction/05_00_youtube.html"><span class="index-link-title">listTitle</span><span class="filename">views/02_interaction/05_00_youtube.html</span></a></li></ul>				 <h3 id="tab1-8" class="sec_h sub-title">TYPO</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/02_interaction/06_00_typo.html"><span class="index-link-title">listTitle</span><span class="filename">views/02_interaction/06_00_typo.html</span></a></li></ul>				 <h3 id="tab1-9" class="sec_h sub-title">SWIPER</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/02_interaction/07_00_swiper.html"><span class="index-link-title">listTitle</span><span class="filename">views/02_interaction/07_00_swiper.html</span></a></li>					<li class="index-section-item"><a class="index-link" href="views/02_interaction/08_00_cursor.html"><span class="index-link-title">listTitle</span><span class="filename">views/02_interaction/08_00_cursor.html</span></a></li></ul>				 <h3 id="tab1-11" class="sec_h sub-title">ETC</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/02_interaction/10_00_etc.html"><span class="index-link-title">listTitle</span><span class="filename">views/02_interaction/10_00_etc.html</span></a></li>						</ul>
+		<a href="#cate-top" class="go-to-top" style="position:fixed;bottom:80px;right:30px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:17px;background-color:#2d5f8a;color:#fff;width:50px;height:50px;line-height:50px;">Top</a>
+	</section>
+		<section class="section-list">
+				<h2 id="tab_doc" class="index-title">03_canvas</h2>
+				 <h3 id="tab2-1" class="sec_h sub-title">캔버스의 기초</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/03_canvas/00_00_bagic.html"><span class="index-link-title">캔버스의 기초</span><span class="filename">views/03_canvas/00_00_bagic.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/00_00_smile.html"><span class="index-link-title">Smile</span><span class="filename">views/03_canvas/00_00_smile.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/00_01_images.html"><span class="index-link-title">이미지</span><span class="filename">views/03_canvas/00_01_images.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/00_02_video-1.html"><span class="index-link-title">비디오 #1</span><span class="filename">views/03_canvas/00_02_video-1.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/00_02_video-2.html"><span class="index-link-title">비디오 #2</span><span class="filename">views/03_canvas/00_02_video-2.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/00_02_video-3.html"><span class="index-link-title">비디오 #3</span><span class="filename">views/03_canvas/00_02_video-3.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/00_03_animation-1.html"><span class="index-link-title">애니메이션 (requestAnimationFrame)</span><span class="filename">views/03_canvas/00_03_animation-1.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/00_03_animation-2.html"><span class="index-link-title">애니메이션 (setInterval)</span><span class="filename">views/03_canvas/00_03_animation-2.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/00_04_transform-1.html"><span class="index-link-title">Transform #1</span><span class="filename">views/03_canvas/00_04_transform-1.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/00_04_transform-2.html"><span class="index-link-title">Transform #2</span><span class="filename">views/03_canvas/00_04_transform-2.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/00_04_transform-3.html"><span class="index-link-title">Transform #3</span><span class="filename">views/03_canvas/00_04_transform-3.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li></ul>				 <h3 id="tab2-12" class="sec_h sub-title">캔버스의 활용</h3><ul>
+					<li class="index-section-item"><a class="index-link" href="views/03_canvas/01_00_drawing-board.html"><span class="index-link-title">Drawing Board</span><span class="filename">views/03_canvas/01_00_drawing-board.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/01_01_moving-interaction.html"><span class="index-link-title">Interaction</span><span class="filename">views/03_canvas/01_01_moving-interaction.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/01_02_particle-basic.html"><span class="index-link-title">Particle - Basic</span><span class="filename">views/03_canvas/01_02_particle-basic.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/01_03_firework.html"><span class="index-link-title">보일러 플레이트</span><span class="filename">views/03_canvas/01_03_firework.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/01_04_count-circle.html"><span class="index-link-title">Count Down</span><span class="filename">views/03_canvas/01_04_count-circle.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/01_05_confetti-1.html"><span class="index-link-title">Confetti #1</span><span class="filename">views/03_canvas/01_05_confetti-1.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/01_05_confetti-2.html"><span class="index-link-title">Confetti #2</span><span class="filename">views/03_canvas/01_05_confetti-2.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/01_05_confetti-3.html"><span class="index-link-title">Confetti #3</span><span class="filename">views/03_canvas/01_05_confetti-3.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/01_05_confetti-4.html"><span class="index-link-title">Confetti #4</span><span class="filename">views/03_canvas/01_05_confetti-4.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/01_05_confetti-5.html"><span class="index-link-title">Confetti #5</span><span class="filename">views/03_canvas/01_05_confetti-5.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>					<li class="index-section-item"><a class="index-link" href="views/03_canvas/01_06_mini-game.html"><span class="index-link-title">Mini Game</span><span class="filename">views/03_canvas/01_06_mini-game.html</span></a>
+						<span class="label-date new">2024.10.21</span>
+</li>						</ul>
+		<a href="#cate-top" class="go-to-top" style="position:fixed;bottom:80px;right:30px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:17px;background-color:#2d5f8a;color:#fff;width:50px;height:50px;line-height:50px;">Top</a>
+	</section>
+	<footer class="index-footer">
+		<p class="index-info"><strong>Yoora Moon</strong></p>
+	</footer>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+	<script>
+	// search
+	var categoryList=["All"],
+	categoryUnique=[],
+	categoryUnique2=[],
+	sectionList=$(".section-list"),
+	categorySelect=$("#index-search-from-menu"),
+	dateLabel=sectionList.find(".label-date")
+	,dateSelect=$("#index-search-from-date"),
+	dateList=["Default"],
+	dateUnique=[],
+	searchKeyword=$("#index-search-by-keyword"),
+	searchValue=null,
+	hiddenList=function(){sectionList.hide();sectionList.find("h2").hide(),sectionList.find("h3").hide(),sectionList.find("ul").hide(),sectionList.find("li").hide()},
+	showList=function(i){i==undefined?sectionList.show():sectionList.eq(i-1).show(),sectionList.find("h2").show(),sectionList.find("h3").show(),sectionList.find("ul").show(),sectionList.find("li").show()},
+	resetStyle=function(){searchKeyword.val(""),sectionList.find("li a").removeClass("matching_keywords")},
+	setCategory=function(){
+		if(sectionList.find("h2").length>0){
+			for(var e=0;e<sectionList.find("h2").length+1;e++)
+			categoryList.push(sectionList.find("h2").eq(e).text()),
+			$.each(categoryList,function(e,t){-1===$.inArray(t,categoryUnique)&&categoryUnique.push(t)});
+			categoryUnique=$.grep(categoryUnique,function(e){return" "==e||e});
+		for(var t=0;t<categoryUnique.length;t++)categorySelect.append("<option value="+t+">"+categoryUnique[t]+"</option>");
+		categorySelect.on("change",function(){
+			var e=$(this).val();
+			"0"==e
+			?showList()
+			:(
+				dateSelect.val("Default").change(),resetStyle(),hiddenList(),
+				showList(e),
+				$.each($(".section-list h2"), function(t,i){
+					t==e-1&&($(this).show(),$(this).nextAll('h3').show(),
+					$(this).nextAll('h3').next("ul").show(),
+					$(this).nextAll('h3').next("ul").find("li").show())
+				})
+			)
+		}
+	)}else 
+	$(".index-search-menu").hide()},
+	setDate=function(){
+		if(dateLabel.length>0){
+			for(var e=0;e<dateLabel.length;e++)
+				dateList.push(dateLabel.eq(e).text()),
+				$.each(dateList,function(e,t){
+					-1===$.inArray(t,dateUnique)&&dateUnique.push(t)
+				});
+			Array.prototype.move=function(e,t){
+				return this.splice(t,0,this.splice(e,1)[0]),this},
+										dateUnique.sort(),
+										dateUnique.move(dateUnique.lastIndexOf(),0);
+			for(var t=0;t<dateUnique.length;t++)
+				dateSelect.append("<option value="+dateUnique[t]+">"+dateUnique[t]+"</option>");
+				dateSelect.on("change",function(){
+					var e=$(this).val();
+					"Default"==e
+					?showList()
+					:(
+						categorySelect.val("0").change(),resetStyle(),hiddenList(),
+						$.each($(".section-list .label-date"),function(t,i){
+							$(this).text()==e&&($(this).parents(".section-list").show() ,$(this).parents("ul").prevAll("h2").show(),$(this).parents("ul").prev("h3").show(),
+							$(this).parents("ul").show(),$(this).parents("li").show())
+						})
+					)
+			})
+		}else 
+			$(".search_date").hide()},
+			searchFromKeyword=function(){
+				searchKeyword.on("keyup", function(e){
+					searchValue=$(this).val(),
+					categorySelect.val("0").change(),dateSelect.val("Default").change(),
+					searchValue.length!==0
+					?(hiddenList(),sectionList.find("li").each(function(e,t){
+							var i=$(this).find("a:contains("+searchValue+")");
+							i.parents("ul").parents("section").show(),i.parents("ul").prevAll("h2").show(),i.parents("ul").prev("h3").show(),i.parents("ul").show(),i.parents("li").show(),
+							i.addClass("matching_keywords")
+						})
+					)
+					:(showList(),sectionList.find("a").removeClass("matching_keywords"))
+				}
+			)};
+			$(window).on("load",function(){setCategory(),setDate(),searchFromKeyword()})
+	</script>
+</body>
+</html>

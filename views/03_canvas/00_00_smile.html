@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="ko"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="format-detection" content="telephone=no">
+	
+	<title>캔버스의 기초</title>
+	<!-- Icon & Favicon -->
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+	<!-- // Icon & Favicon -->
+	<link rel="stylesheet" href="../css/libs.css">
+	<link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body data-pagestatus="new : 2024.10.21">
+	<div class="wrap">
+		<!--S: HEADER -->
+		<header>
+			<!-- Navigation -->
+			<nav></nav>
+			<!-- // Navigation -->
+		</header>
+		<!--E: HEADER -->
+		<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+		}
+
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		canvas {
+			background-color: #292726;
+		}
+
+		</style>
+		<canvas width="300" height="300">이 브라우저는 캔버스를 지원하지 않습니다.</canvas>
+		<canvas width="300" height="300">이 브라우저는 캔버스를 지원하지 않습니다.</canvas>
+		<script>
+		const canvas = document.querySelectorAll('canvas');
+		const context = canvas[0].getContext('2d');
+		const context2 = canvas[1].getContext('2d');
+
+		function 라디안(각도) {
+		  return 각도 * Math.PI / 180;
+		}
+		// 스마일1
+		context.beginPath();
+		context.lineWidth = 3;
+		context.arc(150, 150, 50, 0, 라디안(360), false);
+		context.strokeStyle = 'white';
+		context.stroke();
+		context.closePath();
+		context.beginPath();
+		context.arc(135, 140, 5, 0, 라디안(360), false);
+		context.fillStyle = 'white';
+		context.fill();
+		context.closePath();
+		context.beginPath();
+		context.arc(165, 140, 5, 0, 라디안(360), false);
+		context.fillStyle = 'white';
+		context.fill();
+		context.closePath();
+		context.beginPath();
+		context.lineWidth = 3;
+		context.arc(150, 160, 20, 0, 라디안(180), false);
+		context.fillStyle = 'orange'
+		context.fill();
+		context.closePath();
+
+		//스마일2
+		context2.beginPath();
+		context2.lineWidth = 3;
+		context2.arc(150, 150, 50, 0, 라디안(360), false);
+		context2.strokeStyle = 'white';
+		context2.stroke();
+		context2.closePath();
+		context2.beginPath();
+		context2.moveTo(140, 140);
+		context2.lineTo(125, 145);
+		context2.stroke();
+		context2.moveTo(140, 140);
+		context2.lineTo(125, 135);
+		context2.stroke();
+		context2.closePath();
+		context2.beginPath();
+		context2.moveTo(160, 140);
+		context2.lineTo(175, 145);
+		context2.stroke();
+		context2.moveTo(160, 140);
+		context2.lineTo(175, 135);
+		context2.stroke();
+		context2.closePath();
+		context2.beginPath();
+		context2.lineWidth = 3;
+		context2.arc(150, 160, 20, 0, 라디안(180), false);
+		context2.stroke();
+		context2.closePath();
+
+		</script>
+		<!--S: FOOTER -->
+		<footer class="footer">
+			<p class="footer-desc">©2024. YOORA All Rights Reserved.</p>
+		</footer>
+		<!--E: FOOTER -->
+	</div>
+
+
+
+</body></html>
