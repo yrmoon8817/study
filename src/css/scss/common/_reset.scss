@@ -1,0 +1,75 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+html,
+body {
+  width:100%;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none
+}
+body{
+  min-height:100%;
+}
+img,
+form,
+fieldset,
+svg,
+li {
+  border: 0;
+  vertical-align: top
+}
+
+ul,
+ol {
+  list-style: none
+}
+
+button {
+  overflow: visible;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer
+}
+
+button:disabled {
+  cursor: default;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  margin: -1px;
+}
+
+input,
+button,
+select {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+address,
+caption,
+em {
+  font-style: normal
+}
+
+a,
+a:focus,
+a:active,
+a:hover {
+  text-decoration: none;
+  color:inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}

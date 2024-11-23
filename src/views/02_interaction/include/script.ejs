@@ -1,0 +1,21 @@
+	<%_ let jsArray = locals.jsArray? locals.jsArray : [] _%>
+	<%_ let libsArray = locals.libsArray? locals.libsArray : [] _%>
+	
+	<!-- S: Javascript -->
+	<script src="../../js/libs/vendor.min.js"></script>
+	<script src="../../js/apps/00_common.js"></script>
+
+	<%_if(libsArray) {_%>
+	<%_for( let i=0; i< libsArray.length; i+=1) {_%>
+	<script src="../../js/libs/<%=libsArray[i]%>.js"></script>
+	<%_}_%>
+	<%_}_%>
+	<%_if(jsArray) {_%>
+	<%_for( let i=0; i< jsArray.length; i+=1) {_%>
+	<script src="../../js/apps/<%=jsArray[i]%>.js"></script>
+	<%_}_%>
+	<%_}_%>
+	<!-- E: Javascript -->
+
+
+

@@ -1,0 +1,99 @@
+<%-include('./include/head.ejs',{"title" : "캔버스의 활용" , "listTitle" : "Mini Game : 캔버스의 활용" })%>
+<body data-pagestatus="new : 2024.10.21">
+		<!--S: HEADER -->
+		<%-include('./include/header.ejs',{
+			header :{
+				type:'01',
+			}
+		})%>
+		<!--E: HEADER -->
+  <style>
+html,body{
+    width: 100%;height: 100%;
+    overflow: hidden;
+    background-color: #1f1f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.asset-img{display: none;}
+canvas{
+    width:100vmin;
+    height:100vmin;
+}
+main{
+    position:relative;
+    overflow:hidden;
+}
+.ready-screen, .finish-screen{
+    position:absolute;
+    left:0;top:0;
+    width:100%;
+    height:100%;
+    z-index:10;
+    background-color:rgba(0,0,0,0.6);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: column;
+    user-select: none;
+}
+.title-img{
+    width:60vmin;
+    margin-bottom:15vmin;
+    opacity:0;
+    transform:scale(2);
+}
+.play-img, .replay-img{
+    width:11vmin;
+    cursor:pointer;
+    transform: scale(0);
+}
+
+.finish-screen{
+    opacity:0;
+    pointer-events: none;
+    color:#fff;
+    font-family:'Jua';
+    
+}
+.finish-screen > .distance{
+    font-size:15vmin;
+}
+
+.finish-screen>.coin{
+   font-size:8vmin;
+   margin-bottom:8vmin;
+   color:gold; 
+    
+}
+
+
+
+  </style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js" integrity="sha512-GQ5/eIhs41UXpG6fGo4xQBpwSEj9RrBvMuKyE2h/2vw3a9x85T1Bt0JglOUVJJLeyIUl/S/kCdDXlE/n7zCjIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<img src="../../img/canvas/bg1.png" alt="" id="bg1-img" class="asset-img">
+		<img src="../../img/canvas/bg2.png" alt="" id="bg2-img" class="asset-img">
+		<img src="../../img/canvas/bg3.png" alt="" id="bg3-img" class="asset-img">
+		<img src="../../img/canvas/wall.png" alt="" id="wall-img" class="asset-img">
+		<img src="../../img/canvas/bird.png" alt="" id="bird-img" class="asset-img">
+		<img src="../../img/canvas/coin.png" alt="" id="coin-img" class="asset-img">
+		<main>
+			<div class="ready-screen">
+				<img src="../../img/canvas/title.png" alt="" class="title-img">
+				<img src="../../img/canvas/play.svg" alt="" class="play-img">
+			</div>
+			<div class="finish-screen">
+				<div class="distance">0m</div>
+				<div class="coin">0coin</div>
+				<img src="../../img/canvas/replay.svg" alt="" class="replay-img">
+			</div>
+			<canvas></canvas>
+		</main>
+<%-include('./include/script.ejs',{
+	jsArray:['canvas/mini-game/mini-game'],
+	module:true
+})%>
+</body>
+</html>

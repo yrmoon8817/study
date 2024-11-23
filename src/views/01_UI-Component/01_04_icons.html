@@ -1,0 +1,37 @@
+<%-include('./include/head.ejs',{"title" : "Icons" , "listTitle" : "Icons : DATA DISPLAY" })%>
+<body data-pagestatus="">
+	<div class="wrap">
+		<!--S: HEADER -->
+		<%-include('./include/header.ejs',{
+			header :{
+				type:'01',
+
+			}
+		})%>
+		<!--E: HEADER -->
+
+		<!--S: CONTENTS -->
+		<main id="content">
+
+		</main>
+		<!--E: CONTENTS -->
+
+		<!--S: FOOTER -->
+		<%-include('./include/footer.ejs',{
+			footer :{
+				type: '01',
+				year: '2024'
+			}
+		})%>
+		<!--E: FOOTER -->
+	</div>
+
+	<!--S: LAYER -->
+	<div class="layer"></div>
+	<!--E: LAYER -->
+
+<%-include('./include/script.ejs',{
+	jsArray:['components/01_autocomplete/autocomplete']
+})%>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<%-include('./include/head.ejs',{
+	"title" : "PARALLAX - background" ,
+	"listTitle" : "background (use Jarallax) : PARALLAX",
+	cssArray: ['parallax']
+	})%>
+<body data-pagestatus="new : 2024.08.13" class="wrap-parallax-1">
+	<div class="wrap">
+		<!--S: CONTENTS -->
+    <section class="section section-01">
+      <div class="title-box">
+        <h2 class="title">PARALLAX VIDEO</h2>
+        <p class="dummy-desc">The journey of the automobile is a testament 
+          to human creativity and 
+          the relentless pursuit of innovation, 
+          promising exciting developments in the years to come.
+        </p>
+      </div>
+      <div class="jarallax" data-speed="0.5" data-video-src="mp4:../../video/video-1.mp4" autoplay muted></div>
+    </section>
+    <section class="section section-02">
+      <div class="box">
+        <p class="dummy-desc"><span class="bar"></span>The automobile, a remarkable invention of the late 19th century, has profoundly transformed human mobility and the global landscape. From the early models powered by steam engines to the sleek electric vehicles of today, the evolution of the automobile is a testament to human ingenuity and technological progress.The origins of the automobile date back to the late 1800s. Karl Benz, a German engineer, is often credited with creating the first true automobile in 1886. His three-wheeled Motorwagen, powered by an internal combustion engine, marked the beginning of the modern automobile era. Around the same time, other inventors such as Gottlieb Daimler and Wilhelm Maybach were developing their own versions of motorized vehicles, contributing to the burgeoning automotive industry</p>
+        <span class="divider"></span>
+        <p class="dummy-desc">The origins of the automobile date back to the late 1800s. Karl Benz, a German engineer, is often credited with creating the first true automobile in 1886. His three-wheeled Motorwagen, powered by an internal combustion engine, marked the beginning of the modern automobile era. Around the same time, other inventors such as Gottlieb Daimler and Wilhelm Maybach were developing their own versions of motorized vehicles, contributing to the burgeoning automotive industry.In the early 20th century, the automobile industry experienced rapid growth and innovation. Henry Ford revolutionized the industry with the introduction of assembly line production techniques. His Model T, first produced in 1908, became affordable for the average American, drastically changing transportation and society. The assembly line allowed for mass production, significantly reducing the cost of manufacturing and making cars more accessible to a broader population.</p>
+      </div>
+    </section>
+    <section class="section section-03">
+      <h2 class="title">PARALLAX BG</h2>
+      <div class="box jarallax" data-speed="0.5">
+        <img src="../../../img/parallax-img/car-bg-1.jpg" alt="" class="jarallax-img">
+      </div>
+    </section>
+    <section class="section section-04">
+      <h2 class="title">PARALLAX BG</h2>
+      <div class="box jarallax" data-speed="0.6">
+        <img src="../../../img/parallax-img/car-bg-2.jpg" alt="" class="jarallax-img">
+      </div>
+    </section>
+    <section class="section section-05">
+      <div class="box">
+      <p class="dummy-desc">The interwar period saw further 
+        advancements in automotive technology. 
+        Cars became more reliable and comfortable, 
+        with improvements in suspension, 
+        braking systems, and engines.
+      </p>
+      </div>
+       <div class="jarallax" data-speed="0.6" data-video-src="mp4:../../video/video-2.mp4" autoplay muted></div>
+    </section>
+    <section class="section section-footer">
+      <p class="dummy-desc">Consumer preferences are also changing, with a growing emphasis on sustainability, connectivity, and convenience. Automakers will need to adapt to these trends by offering innovative products and services that meet the evolving needs of their customers. Collaboration between traditional automakers, technology companies, and governments will be essential to drive progress and create a sustainable future for transportation.</p>
+    </section>
+		<!--E: CONTENTS -->
+	</div>
+<%-include('./include/script.ejs',{
+	libsArray: ['swiper.min', 'jarallax','jarallax-video'],
+	jsArray:['interaction/parallax/parallax_jarallax']
+})%>
+</body>
+</html>

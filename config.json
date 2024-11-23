@@ -1,0 +1,49 @@
+{
+  "dir": {
+    "src": "src/",
+    "dist": "dist/"
+  },
+  "jsSetting": {
+    "src": "src/js/**/**/**/*.js",
+    "dist": "dist/js/",
+    "srcApps": "src/js/apps/**/**/*.js",
+    "minifyFileName": "works.min.js"
+  },
+  "fontsSetting": {
+    "src": "src/font/**/*",
+    "dist": "dist/font/"
+  },
+  "imgSetting": {
+    "src": [
+      "src/img/**/*.{png,jpg,jpeg,gif,svg,ico}"
+    ],
+    "watchSrc": "src/img/**/*",
+    "dist": "dist/img/",
+    "svg": "src/img/svg/*.svg",
+    "minOpts": {
+      "optimizationLevel": 5
+    }
+  },
+  "htmlSetting": {
+    "src": "src/**/**/**/*.{html,ejs}",
+    "dist": "dist/views/**",
+    "except": "src/views/**/include/*.ejs"
+  },
+  "cssSetting": {
+    "src": "src/css/scss/**/*.scss",
+    "dist": "dist/css/",
+    "libs": "src/css/libs/**/*",
+    "sassOptsCp": {
+      "outputStyle": "compressed",
+      "errLogToConsole": false
+    },
+    "sassOptsEx": {
+      "outputStyle": "expanded",
+      "errLogToConsole": false
+    }
+  },
+  "videosSetting": {
+    "src": "src/video/**/*",
+    "dist": "dist/video/"
+  }
+}

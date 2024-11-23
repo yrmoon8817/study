@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title><%= project.projectName %></title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+*{margin:0;padding:0;font-family: "Noto Sans KR", sans-serif;}
+html{width:100%;}
+body{width:100%;min-height:100%;background-color:#f1f1f1;padding-bottom:80px;}
+ul,ol{list-style:none}
+a {text-decoration:none;color:inherit;}
+.index-header{position:fixed;top:0;left:0;display:flex;justify-content:space-between;align-items:center;width:100%;min-height:80px;padding:0 20px;background:#17305e;z-index:2;box-sizing: border-box;}
+.index-header .index-title{padding:8px;font-size:25px;font-weight:700;color:#f1f1f1;box-sizing: border-box;}
+input,button, select{outline:none;border:0;}
+.index-header .index-search {max-width:400px;width:100%;display:flex;flex-wrap:wrap;justify-content:center;font-size:12px;}
+.index-search label{vertical-align:middle;margin-right:10px;font-weight:300;color:#fcc4b3}
+.index-search input,.index-search select{font-size:12px;vertical-align:middle;padding:3px 5px;color:#333}
+.index-search .index-search-date{display: flex;margin-left:0;}
+.index-search > li {display: flex;padding:5px 10px;border-bottom:1px solid #ddd;}
+.index-search .index-search-keyword input{width:170px}
+.index-section-category {padding:100px 20px 20px;background:#f1f1f1}
+.index-category-list {overflow-y:auto; max-height:100px;}
+.index-section-category a{color:#555;font-size:12px;}
+.sub-title{padding:10px;font-size:17px;font-weight:700;border-bottom:1px solid #999;scroll-margin-top:50px; color:#222;scroll-margin-top:100px;}
+.index-section-category .sub-title.cate {font-size:14px; border-bottom:1px solid #17305e;padding:5px 10px;box-sizing: border-box;}
+section .index-cate-item{padding:4px 10px;border-bottom:1px solid #ddd;box-sizing: border-box;}
+section .index-title{padding:8px;font-size:22px;font-weight:700;color:#2d2d2d;border-bottom:2px solid #2d2d2d;}
+section .sub-title:not(:first-of-type){margin-top:10px;}
+.section-list {padding:20px;}
+.sub-title:not(.cate):not(:first-of-type){margin-top:15px;}
+.index-section-item{display:block;padding:7px 10px;border-bottom:1px solid #ddd;}
+.index-link-title {display:inline-block;margin-right:15px;}
+.index-section-item .filename{background-color:#cccccc;padding:1px 5px;border-radius:4px;word-wrap:break-word}
+.section-list .index-link{font-size:13px;color:#777;text-decoration:none;letter-spacing:.6px;padding:1px 5px;border-radius:3px}
+.section-list .index-link:hover{color:#333}
+.index-section-info{padding:15px 20px;font-size:12px;color:#666}
+.index-section-info span{vertical-align:top;margin-top:2px;}
+.new{display:inline-block;position:relative;top:-1px;height:16px;padding:0 5px 1px;border-radius:3px;background:#b93636;font-family:verdana;font-size:11px;font-weight:400;color:#fff;line-height:16px;vertical-align:middle;}
+.update{display:inline-block;position:relative;top:-1px;height:16px;background:#2f79bb;color:#fff;padding:0 5px 1px;border-radius:3px;font-family:verdana;font-size:11px;font-weight:400;line-height:16px;vertical-align:middle;}
+.matching_keywords{background:#2aff9c;color:#16752e}
+.index-footer{position:fixed;bottom:0;left:0;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;padding:10px 20px;background:#17305e;min-height:40px;max-height:60px;}
+.index-footer .index-info{font-size:12px;color:#fff;letter-spacing:2px}
+@media screen and (max-width:767px){
+ .index-header {flex-direction: column;flex-wrap: wrap;text-align:center;padding:10px;box-sizing: border-box;}
+ .index-section-category{margin-top:130px;}
+ .index-search{max-width:360px !important;}
+ .index-search > li {padding:5px 10px;border-bottom:none;}
+ section {padding-left:10px !important;padding-right:10px !important;}
+ .section-list .index-link{display:inline-block;}
+ .section-list .index-link .filename{display:inline-block;margin-top:10px;}
+ .new, .update {margin-left:5px !important;}
+}
+</style>
+</head>
+<body>
+	<header class="index-header">
+		<h1 class="index-title"><%= project.projectName %></h1>
+		<ul class="index-search">
+			<li class="index-search-menu">
+				<label for="index-search-from-menu">Menu</label>
+				<select name="" id="index-search-from-menu">
+				</select>
+			</li>
+			<li class="index-search-date">
+				<label for="index-search-from-date">Updated date</label>
+				<select name="" id="index-search-from-date">
+				</select>
+			</li>
+			<li class="index-search-keyword">
+				<label for="index-search-by-keyword">Searching by keywords</label><input type="text" id="index-search-by-keyword" placeholder="Keywords">
+			</li>
+		</ul>
+	</header>
+	<section class="index-section-category" id="cate-top">
+		<h2 class="index-title">카테고리 바로가기</h2>
+		<%_
+		var list = files || [];
+		var cateArr = [];
+		 for( let f=0; f< list.length; f+=1) {_%>
+		<h3 class="sub-title cate"><%=list[f][0].theme%></h3>
+		<ul class="index-category-list">
+		<%_ 
+		var titleArr = [];
+		var count = 0;
+		var check=false;
+		for( let x=1; x< list[f].length; x+=1) {
+			if(titleArr){
+				titleArr.forEach((item,index)=>{
+					if(titleArr[index]==list[f][x].listTitle.split(' : ')[1]){
+						count++;
+					}
+					if(index === titleArr.length-1){
+						if(count>0){
+							check=false
+						} else {
+							check=true
+						}
+						count=0;
+						return check;
+					}
+				})
+			}
+			if(check || titleArr.length===0){ titleArr.push(list[f][x].listTitle.split(' : ')[1]) _%>
+				<li class="index-cate-item"><a href="#tab<%=`${f}-${x}`%>"><%=list[f][x].listTitle.split(' : ')[1]%></a></li>
+			<%_}_%>
+			<%_}_%>
+		</ul>	
+		<%_}_%>
+	</section>
+	<section class="index-section-info">
+		<span class="label-date new"></span> NEW <span class="label-date update"></span> UPDATE
+	</section>
+		<%_
+		var list = files;
+		var cateArr = [];
+		 for( let g=0; g< list.length; g+=1) {_%>
+		<section class="section-list">
+				<h2 id="tab_doc" class="index-title"><%=list[g][0].theme%></h2>
+				<%_
+				var titleArr = [];
+				var count = 0;
+				var check=false;
+				for( let w=1; w< list[g].length; w+=1){
+					if(titleArr){
+						titleArr.forEach((item,index)=>{
+							if(titleArr[index]==list[g][w].listTitle.split(' : ')[1]){
+								count++;
+							}
+							if(index === titleArr.length-1){
+								if(count>0){
+									check=false
+								} else {
+									check=true
+								}
+								count=0;
+								return check;
+							}
+						})
+					}
+				if(check || titleArr.length===0){ if(titleArr.length!==0){_%></ul><%_} titleArr.push(list[g][w].listTitle.split(' : ')[1]) _%>	
+				 <h3 id="tab<%=`${g}-${w}`%>" class="sec_h sub-title"><%=list[g][w].listTitle.split(' : ')[1]%></h3><ul>
+				<%_}_%>
+					<li class="index-section-item"><a class="index-link" href="views/<%=list[g][0].theme%>/<%= list[g][w].name %>"><span class="index-link-title"><%=list[g][w].listTitle.split(' : ')[0]%></span><span class="filename">views/<%=list[g][0].theme%>/<%= list[g][w].name %></span></a><% if (list[g][w].splitStatus) { %>
+						<span class="label-date <%= list[g][w].splitStatus %>"><%= list[g][w].splitStatusDate %></span>
+						<%_}_%></li><%_}_%>
+						</ul>
+		<a href="#cate-top" class="go-to-top" style="position:fixed;bottom:80px;right:30px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:17px;background-color:#2d5f8a;color:#fff;width:50px;height:50px;line-height:50px;">Top</a>
+	</section>
+	<%_}_%>
+	<footer class="index-footer">
+		<p class="index-info"><strong>Yoora Moon</strong></p>
+	</footer>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+	<script>
+	// search
+	var categoryList=["All"],
+	categoryUnique=[],
+	categoryUnique2=[],
+	sectionList=$(".section-list"),
+	categorySelect=$("#index-search-from-menu"),
+	dateLabel=sectionList.find(".label-date")
+	,dateSelect=$("#index-search-from-date"),
+	dateList=["Default"],
+	dateUnique=[],
+	searchKeyword=$("#index-search-by-keyword"),
+	searchValue=null,
+	hiddenList=function(){sectionList.hide();sectionList.find("h2").hide(),sectionList.find("h3").hide(),sectionList.find("ul").hide(),sectionList.find("li").hide()},
+	showList=function(i){i==undefined?sectionList.show():sectionList.eq(i-1).show(),sectionList.find("h2").show(),sectionList.find("h3").show(),sectionList.find("ul").show(),sectionList.find("li").show()},
+	resetStyle=function(){searchKeyword.val(""),sectionList.find("li a").removeClass("matching_keywords")},
+	setCategory=function(){
+		if(sectionList.find("h2").length>0){
+			for(var e=0;e<sectionList.find("h2").length+1;e++)
+			categoryList.push(sectionList.find("h2").eq(e).text()),
+			$.each(categoryList,function(e,t){-1===$.inArray(t,categoryUnique)&&categoryUnique.push(t)});
+			categoryUnique=$.grep(categoryUnique,function(e){return" "==e||e});
+		for(var t=0;t<categoryUnique.length;t++)categorySelect.append("<option value="+t+">"+categoryUnique[t]+"</option>");
+		categorySelect.on("change",function(){
+			var e=$(this).val();
+			"0"==e
+			?showList()
+			:(
+				dateSelect.val("Default").change(),resetStyle(),hiddenList(),
+				showList(e),
+				$.each($(".section-list h2"), function(t,i){
+					t==e-1&&($(this).show(),$(this).nextAll('h3').show(),
+					$(this).nextAll('h3').next("ul").show(),
+					$(this).nextAll('h3').next("ul").find("li").show())
+				})
+			)
+		}
+	)}else 
+	$(".index-search-menu").hide()},
+	setDate=function(){
+		if(dateLabel.length>0){
+			for(var e=0;e<dateLabel.length;e++)
+				dateList.push(dateLabel.eq(e).text()),
+				$.each(dateList,function(e,t){
+					-1===$.inArray(t,dateUnique)&&dateUnique.push(t)
+				});
+			Array.prototype.move=function(e,t){
+				return this.splice(t,0,this.splice(e,1)[0]),this},
+										dateUnique.sort(),
+										dateUnique.move(dateUnique.lastIndexOf(),0);
+			for(var t=0;t<dateUnique.length;t++)
+				dateSelect.append("<option value="+dateUnique[t]+">"+dateUnique[t]+"</option>");
+				dateSelect.on("change",function(){
+					var e=$(this).val();
+					"Default"==e
+					?showList()
+					:(
+						categorySelect.val("0").change(),resetStyle(),hiddenList(),
+						$.each($(".section-list .label-date"),function(t,i){
+							$(this).text()==e&&($(this).parents(".section-list").show() ,$(this).parents("ul").prevAll("h2").show(),$(this).parents("ul").prev("h3").show(),
+							$(this).parents("ul").show(),$(this).parents("li").show())
+						})
+					)
+			})
+		}else 
+			$(".search_date").hide()},
+			searchFromKeyword=function(){
+				searchKeyword.on("keyup", function(e){
+					searchValue=$(this).val(),
+					categorySelect.val("0").change(),dateSelect.val("Default").change(),
+					searchValue.length!==0
+					?(hiddenList(),sectionList.find("li").each(function(e,t){
+							var i=$(this).find("a:contains("+searchValue+")");
+							i.parents("ul").parents("section").show(),i.parents("ul").prevAll("h2").show(),i.parents("ul").prev("h3").show(),i.parents("ul").show(),i.parents("li").show(),
+							i.addClass("matching_keywords")
+						})
+					)
+					:(showList(),sectionList.find("a").removeClass("matching_keywords"))
+				}
+			)};
+			$(window).on("load",function(){setCategory(),setDate(),searchFromKeyword()})
+	</script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+@import '../mixins/_mixins.scss';
+.wrap-parallax-1 {
+  .section {
+    position:relative;
+    overflow:hidden;
+    width:100%;
+    background-color:#111;
+  
+    .jarallax {
+      position:relative;
+      height:100%;
+      z-index:0;
+    }
+    .jarallax-img {
+      vertical-align:top;
+    }
+    .title-box {
+      z-index:10;
+      @include set-center(absolute);
+      width:100%;
+      text-align:center;
+  
+      .title {
+        & + .dummy-desc {
+          width:100%;
+          margin-top:20px;
+          font-size:15px;
+          white-space:pre-line;
+          text-align:center;
+        }
+      }
+    }
+    .title {
+      width:100%;
+      font-size:4vw;
+      font-weight:bold;
+      text-align:center;
+      color:#fdfbfb;
+      text-shadow:rgb(54, 12, 1) 3px 0 10px;
+    }
+    .dummy-desc {
+      overflow:hidden;
+      font-size:14px;
+      line-height:26px;
+      font-weight:400;
+      text-align:left;
+      color:#ecebeb;
+      
+      & +.dummy-desc {
+        margin-top:10px;
+      }
+      .bar {
+        float:left;
+        width:4px;
+        height:36px;
+        margin:7px 10px 5px 6px;
+        background-color:#9b9696;
+      }
+    }
+    .divider {
+      display:block;
+      width:150px;
+      height:1px;
+      margin:40px auto;
+      background-color:#fdfbfb;
+      text-align:center;
+    }
+    &.section-01 {
+      height:100vh;
+    }
+    &.section-02 {
+      @include flexbox();
+      @include justify-content(center);
+      @include align-items(center);
+      height:100%;
+      padding:70px 0;
+      box-sizing:border-box;
+      
+      .box {
+        max-width:1140px;
+        width:70%;
+        text-align:center;
+      }    
+    }
+    &.section-03 {
+      height:100vh;
+      
+      .title {
+        z-index:10;
+        @include set-center(absolute);
+      }
+      .box {
+        width:100%;
+        height:100%;
+      }
+      &::after {
+        position:absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        right:0;
+        background-color:rgba(0,0,0, .3);
+        content:'';
+      }    
+    }
+    &.section-04 {
+      height:100vh;
+      padding:100px 0;
+      box-sizing:border-box;
+      
+      .title {
+        z-index:10;
+        @include set-center(absolute);
+      }
+      .box {
+        width:100%;
+        height:100%;
+      }
+    }
+    &.section-05 {
+      height:100vh;
+  
+      .box {
+        z-index:10;
+        @include set-center(absolute);
+        width:60%;
+      }
+      .dummy-desc {
+        white-space:pre-line;
+        font-size:22px;
+        line-height:2.5;
+        text-align:center;
+        opacity:1;
+      }
+      &::after {
+        position:absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        right:0;
+        background-color:rgba(0,0,0, .4);
+        content:'';
+      }
+    }
+    &.section-footer {
+      @include flexbox();
+      @include justify-content(center);
+      @include align-items(center);
+      height:50vh;
+      
+      .dummy-desc {
+        max-width:1000px;
+        width:70%;
+        text-align:center;
+      }
+    }
+  }
+}
+@media (max-width:767px){
+  .wrap-parallax-1 {
+    .section {
+      .title-box {
+        padding:0 10px;
+        box-sizing:border-box;
+      
+        .title {
+          font-size:32px;
+        
+          & + .dummy-desc {
+            margin-top:15px;
+            font-size:14px;
+          }
+        }
+      }
+      .title {
+        font-size:32px;
+      }
+      .dummy-desc {
+        font-size:13px;
+        line-height:22px;
+      
+        & +.dummy-desc {
+          margin-top:10px;
+        }
+        .bar {
+          width:3px;
+          height:30px;
+        }
+      }
+      .divider {
+        width:100px;
+        margin:30px auto;
+      }
+      &.section-02 {
+        padding:50px 20px;
+      
+        .box {
+          width:100%;
+        }    
+      }
+      &.section-03 {
+        height:80vh; 
+      }
+      &.section-04 {
+        height:70vh;
+        padding:20px;
+      }
+      &.section-05 {
+        height:80vh;
+      
+        .box {
+          width:100%;
+        }
+        .dummy-desc {
+          font-size:15px;
+          line-height:28px;
+        }
+      }
+      &.section-footer {
+        height:auto;
+        padding:50px 20px;
+        box-sizing:border-box;
+      
+        .dummy-desc {
+          width:100%;
+        }
+      }
+    }
+  }
+}

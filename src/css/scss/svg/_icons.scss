@@ -1,0 +1,100 @@
+@import "sass-inline-svg.scss";
+@import "../mixins/mixins.scss";
+
+// .ic {
+//   &_arrow_back {
+//     &_16px{
+//       @include inline-svg-size(16px, 16px, "ic_arrow_back_16px", none, none, #6B768C);
+//     }
+//   }
+//   &_arrow_forward {
+//     &_16px{
+//       @include inline-svg-size(16px, 16px, "ic_arrow_forward_16px", none, none, #1F2023);
+//     }
+//     &_20px{
+//       @include inline-svg-size(20px, 20px, "ic_arrow_forward_20px", none, none, #1F2023);
+//     }
+//   }
+//   &_arrow_down {
+//     &_16px{
+//       @include inline-svg-size(16px, 16px, "ic_arrow_down_16px", none, none, #1F2023);
+//     }
+//   }
+//   &_cellphone{
+//     &_20px {
+//       @include inline-svg-size(20px, 20px, "ic_cellphone_20px",none, none, #b7becd);
+//     }
+//   }
+//   &_check {
+//     &_20px {
+//       @include inline-svg-size(20px, 20px, "ic_check_20px", none, none, #b7becd);
+//     }
+//   }
+//   &_check {
+//     &_24px {
+//       @include inline-svg-size(24px, 24px, "ic_check_24px", none, none, #b7becd);
+//     }
+//   }
+//   &_complete {
+//     &_24px {
+//       display: inline-block;
+//       @include inline-svg-size(24px, 24px, "ic_complete_24px",none, none, #4380f8);
+//     }
+//   }
+//   &_complete {
+//     &_48px {
+//       @include inline-svg-size(48px, 48px, "ic_complete_48px",none, none, #4380f8);
+//     }
+//   }
+//   &_complete_filled {
+//     &_24px {
+//       display: inline-block;
+//       @include inline-svg-size(24px, 24px, "ic_complete_24px",none, none, #4380f8);
+//     }
+//   }    
+//   &_caution {
+//     &_48px {
+//       @include inline-svg-size(48px, 48px, "ic_caution_48px",none, #4380f8, #4380f8);
+//     }
+//   }
+//   &_double_arrow_back {
+//     &_16px {
+//       @include inline-svg-size(16px,16px, "ic_double_arrow_back_16px",none, none, #1F2023);
+//     }
+//   }
+//   &_double_arrow_forward {
+//     &_16px {
+//       @include inline-svg-size(16px,16px, "ic_double_arrow_forward_16px",none, none, #1F2023);
+//     }
+//   }
+//   &_essential{
+//     @include inline-svg-size(6px, 6px, "ic_essential", #f13e3e, none, none);
+//   }
+//   &_lock {
+//     &_20px {
+//       @include inline-svg-size(20px, 20px, "ic_lock_20px",none, none, #b7becd);
+//     }
+//   }
+//   &_mail {
+//     &_20px{
+//       display: inline-block;
+//       @include inline-svg-size(20px, 20px, "ic_mail_20px",none, none, #b7becd);
+//     }
+//   }
+//   &_schedule{
+//     &_16px{
+//       @include inline-svg-size(16px, 16px, "ic_schedule_16px", #1f2023, none, none);
+//     }
+//   }
+//   &_search {
+//     &_20px{
+//       display: inline-block;
+//       @include inline-svg-size(20px, 20px, "ic_search_20px",none, none, #b7becd);
+//     }
+//   }
+//   &_world{
+//     &_20px{
+//       @include inline-svg-size(20px, 20px, "ic_world_20px",none, none, #1F2023);
+//     }
+//   }
+// }

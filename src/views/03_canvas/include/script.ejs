@@ -1,0 +1,14 @@
+	<%_ let jsArray = locals.jsArray? locals.jsArray : [] _%>
+	
+	<!-- S: Javascript -->
+	<script src="../../js/libs/vendor.min.js" defer></script>
+
+	<%_if(jsArray) {_%>
+	<%_for( let i=0; i< jsArray.length; i+=1) {_%>
+	<script type="<%=locals.module?'module':''%>" src="../../js/apps/<%=jsArray[i]%>.js" defer></script>
+	<%_}_%>
+	<%_}_%>
+	<!-- E: Javascript -->
+
+
+

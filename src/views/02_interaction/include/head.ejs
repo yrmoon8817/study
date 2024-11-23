@@ -1,0 +1,25 @@
+<%_ let cssArray = locals.cssArray? locals.cssArray : [] _%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="format-detection" content="telephone=no">
+	<%_if(locals.listTitle){_%><meta name="list" content="<%=listTitle%>"><%_}_%>
+	<title><%=locals.title%></title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<!-- Icon & Favicon -->
+	<link rel="shortcut icon" href="../../favicon.ico">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+	<!-- // Icon & Favicon -->
+
+	<link rel="stylesheet" href="../../css/libs.css">
+	<%_if(cssArray) {_%>
+	<%_for( let i=0; i< cssArray.length; i+=1) {_%>
+	<link rel="stylesheet" href="../../css/<%=cssArray[i]%>.css"/>
+	<%_}_%>
+	<%_}_%>	
+</head>

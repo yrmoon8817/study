@@ -1,0 +1,37 @@
+<%-include('./include/head.ejs',{"title" : "listTitle" , "listTitle" : "listTitle : COUNTER" })%>
+<body data-pagestatus="">
+	<div class="wrap">
+		<!--S: HEADER -->
+		<%-include('./include/header.ejs',{
+			header :{
+				type:'01',
+
+			}
+		})%>
+		<!--E: HEADER -->
+
+		<!--S: CONTENTS -->
+		<main id="content">
+			테스트
+		</main>
+		<!--E: CONTENTS -->
+
+		<!--S: FOOTER -->
+		<%-include('./include/footer.ejs',{
+			footer :{
+				type: '01',
+				year: '2024'
+			}
+		})%>
+		<!--E: FOOTER -->
+	</div>
+
+	<!--S: LAYER -->
+	<div class="layer"></div>
+	<!--E: LAYER -->
+
+<!-- <%-include('./include/script.ejs',{
+	jsArray:['01_01_accordion.js']
+})%> -->
+</body>
+</html>
