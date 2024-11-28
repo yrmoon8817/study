@@ -44,7 +44,6 @@ const generateHTML = (done) => {
       projectInfo.projectOrg = JSON.parse(projectJson).organization;
 
   dirPathArr.forEach((pathname, idx)=>{
-    console.log(pathname)
     fs.readdir(pathname, function(err, files) {
       if (err) {
         throw err;
@@ -67,7 +66,6 @@ const generateHTML = (done) => {
           splitStatus;
         let stats = fs.statSync(file);
         if (file.match(pathArr[idx])){
-          console.log('in');
           fileData = {};
           fileInnerText = fs.readFileSync(file, 'utf8');
           let $ = cheerio.load(fileInnerText);
@@ -109,7 +107,6 @@ const generateHTML = (done) => {
         projectObj.files=fileObjArr;
         projectObjStr = JSON.stringify(projectObj);
         projectObjJson = JSON.parse(projectObjStr);
-        console.log(projectObjStr)
         src("templates/@index.html")
         .pipe(ejs(projectObjJson))
         .pipe(dest("dist/"))
