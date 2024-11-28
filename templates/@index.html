@@ -144,7 +144,7 @@ section .sub-title:not(:first-of-type){margin-top:10px;}
 						})
 					}
 				if(check || titleArr.length===0){ if(titleArr.length!==0){_%></ul><%_} titleArr.push(list[g][w].listTitle.split(' : ')[1]) _%>	
-				 <h3 id="tab<%=`${g}-${w}`%>" class="sec_h sub-title"><%=list[g][w].listTitle.split(' : ')[1]%></h3><ul>
+				 <h3 id="tab<%=`${g}-${w}`%>" class="sec_h sub-title"><%=list[g][w].listTitle.split(' : ')[1]%></h3><ul class="list-box">
 				<%_}_%>
 					<li class="index-section-item"><a class="index-link" href="views/<%=list[g][0].theme%>/<%= list[g][w].name %>"><span class="index-link-title"><%=list[g][w].listTitle.split(' : ')[0]%></span><span class="filename">views/<%=list[g][0].theme%>/<%= list[g][w].name %></span></a><% if (list[g][w].splitStatus) { %>
 						<span class="label-date <%= list[g][w].splitStatus %>"><%= list[g][w].splitStatusDate %></span>
@@ -172,24 +172,28 @@ section .sub-title:not(:first-of-type){margin-top:10px;}
 		})
 		// preview
 		var changeSrc = function () {
-			$(".section-list ul").on("click", "li a", function (e) {
-				$('.section-list ul li').removeClass('on');
-		 		$(this).parent().addClass("on").siblings().removeClass("on"), 
-				$('#preview-box') && $(this).closest("ul").siblings().find("li").removeClass("on"),
+			$(".section-list").on("click", "ul li a", function (e) {
+				$('.section-list li').removeClass('on');
+				$('#preview-box') && $(".section-list").find("li").removeClass("on"),
+				$(this).parent().addClass("on");
 				e.preventDefault(),
 				$("#index_view iframe").attr("src", $(this).attr("href")) }), 
-				$("ul").on("dblclick", "li a", 
+				$(".section-list").on("dblclick", "ul li a", 
 				function () { window.open(this.href) }),
 				$(document).keydown(function (e) { 
 					switch (e.which) { 
 						case 13: window.open($(".on a")[0].href); 
 						case 37: case 39: break; 
 						case 38: $(".on").is(":first-child") 
-						? $(".on").parent().prev().prev().find("li:last-child a").trigger("click") 
-						: $(".on").prev().find("a").trigger("click"); 
+						? ($(".on").parent().prev().prev().hasClass('list-box')
+							?$(".on").parent().prev().prev().find("li:last-child a").trigger("click")
+							:$(".on").parents('.section-list').prev().hasClass('section-list')&&$(".on").parents('.section-list').prev().find("li:last-child a").trigger("click"))
+						:$(".on").prev().find("a").trigger("click"); 
 						break; 
 						case 40: $(".on").is(":last-child") 
-						? $(".on").parent().next().next().find("li:first-child a").trigger("click") 
+						? ($(".on").parent().next().next().hasClass('list-box')
+							?$(".on").parent().next().next().find("li:first-child a").trigger("click")
+							:$(".on").parents('.section-list').next().hasClass('section-list')&&$(".on").parents('.section-list').next().find('ul:first-of-type').find("li:first-child a").trigger("click")) 
 						: $(".on").next().find("a").trigger("click"); 
 						break; 
 						default: return }
